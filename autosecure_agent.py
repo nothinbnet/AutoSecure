@@ -21,8 +21,8 @@ def slack_bot_response(user_email):
 
     non_compliant = [k for k, v in compliance.items() if not v]
     if non_compliant:
-        return f"⚠️ Device for {user_email} is non-compliant on: {', '.join(non_compliant)}"
-    return f"✅ Device for {user_email} is fully compliant."
+        return f"Device for {user_email} is non-compliant on: {', '.join(non_compliant)}"
+    return f" Device for {user_email} is fully compliant."
 
 # This is the logic for the reviewing of the different user data flags
 def access_review(user_id):
@@ -34,7 +34,7 @@ def access_review(user_id):
         "email": user_data["email"],
         "roles": user_data["roles"],
         "compliance_flags": user_data["compliance_flags"],
-        "status": "⚠️ Review needed" if user_data["compliance_flags"] else "✅ Access in compliance"
+        "status": " Review needed" if user_data["compliance_flags"] else " Access in compliance"
     }
     return json.dumps(response, indent=2)
 
