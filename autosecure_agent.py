@@ -38,7 +38,7 @@ def access_review(user_id):
     }
     return json.dumps(response, indent=2)
 
-# this is how the SOC 2 audit report is generated
+# This is how the SOC 2 audit report is generated
 def generate_audit_report():
     report = {
         "device_compliance_summary": device_compliance_data,
