@@ -1,4 +1,4 @@
-# AutoSecure: AI-Powered IT Compliance Assistant 🛡️💻
+# AutoSecure: AI-Powered IT Compliance Assistant 
 
 AutoSecure is a lightweight, simulated IT compliance assistant built in Python. Inspired by real world internal IT and security workflows, this tool is designed to emulate core functionalities of an AI assistant used for managing compliance, device security, and access control across a modern hybrid organization.
 
