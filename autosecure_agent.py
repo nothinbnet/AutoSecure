@@ -1,19 +1,19 @@
 
 import json
 
-# Simulated user access data
+# This is sample user data to be used for this project.
 user_access_data = {
     "user_1": {"email": "jane.doe@company.com", "roles": ["admin", "billing"], "compliance_flags": ["excessive_privileges"]},
     "user_2": {"email": "john.smith@company.com", "roles": ["read-only"], "compliance_flags": []},
 }
 
-# Simulated device compliance data
+# This is sample compliance data for the sample user data for this project.
 device_compliance_data = {
     "jane.doe@company.com": {"encryption": True, "firewall": True, "updates": False},
     "john.smith@company.com": {"encryption": True, "firewall": True, "updates": True},
 }
 
-# Slack Bot simulated response logic
+# This is the logic that shows whether the device for the user is compliant.
 def slack_bot_response(user_email):
     compliance = device_compliance_data.get(user_email, {})
     if not compliance:
@@ -24,7 +24,7 @@ def slack_bot_response(user_email):
         return f"⚠️ Device for {user_email} is non-compliant on: {', '.join(non_compliant)}"
     return f"✅ Device for {user_email} is fully compliant."
 
-# Access Review Agent logic
+# This is the logic for the reviewing of the different user data flags
 def access_review(user_id):
     user_data = user_access_data.get(user_id)
     if not user_data:
@@ -38,7 +38,7 @@ def access_review(user_id):
     }
     return json.dumps(response, indent=2)
 
-# Generate a sample audit report
+# this is how the SOC 2 audit report is generated
 def generate_audit_report():
     report = {
         "device_compliance_summary": device_compliance_data,
